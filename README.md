@@ -1,6 +1,6 @@
 # Expense-tracker
 A simple Python-based CLI Expense Tracker that stores expenses in CSV. Features: add, view, filter, monthly total, and category-based search.
-## ✨ Features
+##  Features
 - Add new expense with amount, category, date, and optional note  
 - Show all recorded expenses  
 - Calculate total spending (all-time)  
