@@ -1,12 +1,12 @@
 from datetime import datetime
 from Tracker import ExpenseTracker
 #this takes the user input so we don't have to validate the input each time
-def gtin(inpm,cast_fun=str,condition=lambda x:True,er_msg="Invalid try again"):
+def gtin(input_message,cast_fun=str,condition=lambda x:True,er_msg="Invalid try again"):
     '''inpm takes the input message, cast_fun takes the data type you want your data to be
     condition parameter takes a condition and then error message desplays the error message'''
     while True:
         try:
-            value=cast_fun(input(inpm))
+            value=cast_fun(input(input_message))
             if not condition(value):
                 print(er_msg)
                 continue
@@ -15,7 +15,7 @@ def gtin(inpm,cast_fun=str,condition=lambda x:True,er_msg="Invalid try again"):
             pass
 #this is so the user can exit the program
 def endloop():
-    a=input("add more ? (y/n) >>")
+    a=input("do you wanna do anything else ? (y) for yes and (n) for no - (y/n) >>")
     try:
         if a=="n":
             return "y"
@@ -51,7 +51,7 @@ while ans!= "y":
          print("enter 1-5 only") #error handling incase user inputs incorrect value
          continue
     if a==1 :
-            amount=gtin("Enter Amount=>",cast_fun=int,er_msg="it should be a number") #using the gtin function
+            amount=gtin("Enter spent Amount=>",cast_fun=int,er_msg="it should be a number only") #using the gtin function
             print("1.Food")
             print("2.Travel")
             print("3.Studies")
@@ -95,4 +95,5 @@ while ans!= "y":
          break
     else:
          print("try again")
+
 print("Thank you for using :3")#end
