@@ -63,10 +63,11 @@ class ExpenseTracker:
             for row in read:
                 if row[1]==self.category:
                     counter+=1
-                print("#########################")
+                print("#########################################")
                 print(f"data number.{counter}")
-                print("#########################")
-                print(f"amount={row[0]}")
-                print(f"category={row[1]}")
-                print(f"date={row[2]}")
-                print(f"note={row[3]}\n")
+                print("#########################################")
+                print(f"amount= {row[0]}")
+                print(f"category= {row[1]}")
+                print(f"date= {row[2]}")
+
+                print(f"note= {row[3]}\n")
