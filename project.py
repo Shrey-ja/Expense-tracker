@@ -15,14 +15,8 @@ def gtin(input_message,cast_fun=str,condition=lambda x:True,er_msg="Invalid try 
             pass
 #this is so the user can exit the program
 def endloop():
-    a=input("do you wanna do anything else ? (y) for yes and (n) for no - (y/n) >>")
-    try:
-        if a=="n":
-            return "y"
-        elif a=="y":
-            return "n"
-    except (TypeError,ValueError) as e:
-        print(f"try again..!!its an {e}error")
+    a=gtin("Do you want to do something else? y for yes and n for no (y/n)>>",str,er_msg="enter a value from 1-6 only")
+    return a
 #just to make the category selection easier
 def CoE(category):
         if category==1:
@@ -41,8 +35,8 @@ def CoE(category):
 
 l=ExpenseTracker()
 
-ans ="n"
-while ans!= "y": 
+ans ="y"
+while ans!= "n": 
     #menu
     print("choose your num\n""1. add\n""2.Show expense\n""3.TOTAL\n""4.Monthly spent\n""5.search by cetegory\n""6.exit\n")
     try:
@@ -95,5 +89,4 @@ while ans!= "y":
          break
     else:
          print("try again")
-
 print("Thank you for using :3")#end
