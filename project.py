@@ -31,7 +31,13 @@ def CoE(category):
             return "PERSONAL"
         elif category==6:
             return "OTHERS"
-
+def ptm():
+    print("1.Food")
+    print("2.Travel")
+    print("3.Studies")
+    print("4.Medical")
+    print("5.Personal")
+    print("6.Others")
 
 l=ExpenseTracker()
 
@@ -46,12 +52,7 @@ while ans!= "n":
          continue
     if a==1 :
             amount=gtin("Enter spent Amount=>",cast_fun=int,er_msg="it should be a number only") #using the gtin function
-            print("1.Food")
-            print("2.Travel")
-            print("3.Studies")
-            print("4.Medical")
-            print("5.Personal")
-            print("6.Others")
+            ptm()
             cat=gtin("Enter Category=>",cast_fun=int,condition=lambda x:x>0 and x<6,er_msg="it should be a number only 1-6")
             c=CoE(category=cat)
             valid_date= gtin("Enter date (YYYY-MM-DD): ",cast_fun=lambda x: datetime.strptime(x,"%Y-%m-%d").date(),er_msg="Invalid date format! Please use YYYY-MM-DD.")
@@ -75,12 +76,7 @@ while ans!= "n":
     elif a==5:
         #menu
         print("******************************\n")
-        print("1.Food")
-        print("2.Travel")
-        print("3.Studies")
-        print("4.Medical")
-        print("5.Personal")
-        print("6.Others")
+        ptm()
         cate_n=gtin("enter a valid category",int,condition=lambda x: 1 <= x <= 6,er_msg="invalid category(1-6 only)")
         cate=CoE(cate_n)
         l.flt_ctg(cate)
@@ -90,3 +86,4 @@ while ans!= "n":
     else:
          print("try again")
 print("Thank you for using :3")#end
+
