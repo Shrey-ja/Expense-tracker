@@ -12,6 +12,7 @@ def gtin(input_message,cast_fun=str,condition=lambda x:True,er_msg="Invalid try 
                 continue
             return value
         except ValueError:
+            print("INVALID..!! Try again!")
             pass
 #this is so the user can exit the program
 def endloop():
@@ -45,11 +46,12 @@ ans ="y"
 while ans!= "n": 
     #menu
     print("choose your num\n""1. add\n""2.Show expense\n""3.TOTAL\n""4.Monthly spent\n""5.search by cetegory\n""6.exit\n")
-    try:
-        a=int(input("your choice.. =")) #selection for the menu
-    except ValueError:
-         print("enter 1-5 only") #error handling incase user inputs incorrect value
-         continue
+    a=gtin("your Choic number 1-6 only=>",int,lambda x:x<=6 and x>0,"invalid value try a num between 1-6")
+    # try:
+    #     a=int(input("your choice.. =")) #selection for the menu
+    # except ValueError:
+    #      print("enter 1-5 only") #error handling incase user inputs incorrect value
+    #      continue
     if a==1 :
             amount=gtin("Enter spent Amount=>",cast_fun=int,er_msg="it should be a number only") #using the gtin function
             ptm()
@@ -86,4 +88,5 @@ while ans!= "n":
     else:
          print("try again")
 print("Thank you for using :3")#end
+
 
