@@ -45,7 +45,7 @@ l=ExpenseTracker()
 ans ="y"
 while ans!= "n": 
     #menu
-    print("choose your num\n""1. add\n""2.Show expense\n""3.TOTAL\n""4.Monthly spent\n""5.search by cetegory\n""6.exit\n")
+    print("choose your num\n""1. add\n""2.Show expense\n""3.TOTAL\n""4.Monthly spent\n""5.search by cetegory\n""6.graph\n""7.exit")
     a=gtin("your Choic number 1-6 only=>",int,lambda x:x<=6 and x>0,"invalid value try a num between 1-6")
     # try:
     #     a=int(input("your choice.. =")) #selection for the menu
@@ -84,9 +84,12 @@ while ans!= "n":
         l.flt_ctg(cate)
         ans=endloop()
     elif a==6:
+        ExpenseTracker.graph()
+    elif a==7:
          break
     else:
          print("try again")
 print("Thank you for using :3")#end
+
 
 
