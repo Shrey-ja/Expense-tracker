@@ -70,4 +70,22 @@ class ExpenseTracker:
                     print(f"category= {row[1]}")
                     print(f"date= {row[2]}")
                     print(f"note= {row[3]}\n")
+    @staticmethod
+    def graph():
+        year= int(input("input year=>"))
+        m=[]
+        date=[]
+        with open("file.csv", "r", newline="") as f:
+            read=csv.reader(f)
+            for row in read:
+                try:
+                    d = datetime.strptime(row[2], "%Y-%m-%d").date()
+                    if d.year == year:
+                        date.append(row[2])
+                        m.append(float(row[0]))
+                except Exception:
+                    pass
+        plt.plot(date,m,color="blue",marker='o',linestyle='-',linewidth=2,markersize=3)
+        plt.show()
+        plt.legend("amount")
 
